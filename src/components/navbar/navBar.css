@@ -1,0 +1,27 @@
+nav{
+    width: 100%;
+    background-color: red;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    list-style: none;
+}
+nav ul li{
+    cursor: pointer;
+}
+nav button{
+    padding: 12px 16px;
+    border-radius: 10px;
+    background-color: grey;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

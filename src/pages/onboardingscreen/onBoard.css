@@ -1,0 +1,47 @@
+.onboarding-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+  }
+  
+  .onboarding-screens {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .onboarding-screen {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Markers */
+  .markers {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .marker {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .marker.active {
+    background-color: #333;
+  }
+  

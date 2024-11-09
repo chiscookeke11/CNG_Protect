@@ -1,30 +1,57 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './onBoard.css';
 
 const Onboarding = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
+  const navigate = useNavigate();
 
   const screens = [
-    { id: 1, content: "Welcome to the App!" },
-    { id: 2, content: "Here's how to get started." },
-    { id: 3, content: "Enjoy using the app!" }
+    {
+      id: 1,
+      image: "https://i.pinimg.com/564x/34/c3/33/34c3332cb8eb6c448bb4544cd7df4bcd.jpg",
+      head: "Lorem Lorem",
+      content: "Create personalized profiles for each of your beloved pets on PawBuddy. Share their name, breed, and age while connecting with a vibrant community."
+    },
+    {
+      id: 2,
+      image: "https://i.pinimg.com/564x/34/c3/33/34c3332cb8eb6c448bb4544cd7df4bcd.jpg",
+      head: "Lorem Lorem",
+      content: "Create personalized profiles for each of your beloved pets on PawBuddy. Share their name, breed, and age while connecting with a vibrant community."
+    },
+    {
+      id: 3,
+      image: "https://i.pinimg.com/564x/34/c3/33/34c3332cb8eb6c448bb4544cd7df4bcd.jpg",
+      head: "Lorem Lorem",
+      content: "Create personalized profiles for each of your beloved pets on PawBuddy. Share their name, breed, and age while connecting with a vibrant community."
+    }
   ];
 
   const handleNext = () => {
     if (currentScreen < screens.length - 1) {
       setCurrentScreen(currentScreen + 1);
+    } else {
+      navigate('/');
     }
+  };
+
+  const handleSkip = () => {
+    setCurrentScreen(screens.length - 1);
   };
 
   return (
     <div className="onboarding-container">
+   
+
       <div
         className="onboarding-screens"
         style={{ transform: `translateX(-${currentScreen * 100}%)` }}
       >
         {screens.map((screen) => (
           <div key={screen.id} className="onboarding-screen">
-            <h2>{screen.content}</h2>
+            <img src={screen.image} alt="" />
+            <h2>{screen.head}</h2>
+            <p>{screen.content}</p>
           </div>
         ))}
       </div>
@@ -42,6 +69,12 @@ const Onboarding = () => {
       <button onClick={handleNext}>
         {currentScreen < screens.length - 1 ? "Next" : "Get Started"}
       </button>
+
+
+         {/* Skip Link */}
+         <a onClick={handleSkip} className="skip-link">
+        Skip
+      </a>
     </div>
   );
 };

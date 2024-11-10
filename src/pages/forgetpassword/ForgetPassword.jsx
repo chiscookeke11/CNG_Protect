@@ -60,7 +60,7 @@ const ForgetPassword = () => {
       <div className="login-link">
         Remember password?
         <span>
-          <NavLink to=""  className="custom-link">Log in</NavLink>
+          <NavLink to="/loginpage"  className="custom-link">Log in</NavLink>
         </span>
       </div>
     </div>

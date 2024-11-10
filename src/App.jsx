@@ -7,6 +7,7 @@ import LoginPage from './pages/loginpage/LoginPage'
 import SignUp from './pages/Signuppage/SignUp';
 import ForgetPassword from './pages/forgetpassword/ForgetPassword';
 import Onboarding from './pages/onboardingscreen/OnboardingScreen';
+import ValidationPage from './pages/ValidationPage';
 
 const App = () => {
   if (window.innerWidth >= 1024) {
@@ -15,10 +16,11 @@ const App = () => {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/loginpage" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
-          <Route path="/onboard" element={<Onboarding />} />
+          <Route path="/" element={<Onboarding />} />
+          <Route path="/validation" element={<ValidationPage />} />
         </Routes>
       </BrowserRouter>
     );

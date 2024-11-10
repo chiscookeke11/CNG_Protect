@@ -31,7 +31,7 @@ const Onboarding = () => {
     if (currentScreen < screens.length - 1) {
       setCurrentScreen(currentScreen + 1);
     } else {
-      navigate('/');
+      navigate('/loginpage');
     }
   };
 

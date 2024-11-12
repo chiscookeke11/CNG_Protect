@@ -31,6 +31,19 @@ const ValidationPage = () => {
     }
   };
 
+  const showPopup = () => {
+    if (overLay.style.display = "none"){
+      overLay.style.display = "flex"
+    }
+  }
+
+
+  const closePopup = () => {
+    if (overLay.style.display = "block"){
+      overLay.style.display = "none"
+    }
+  }
+
   return (
     <div className='validation'>
       <form action="">
@@ -55,7 +68,32 @@ const ValidationPage = () => {
 
         <button>Confirm</button>
         <small>Did not receive the code? <a href="#">Resend</a></small>
+
+        {/* Show success popup */}
+
+        <p onClick={()=> showPopup()}>show popup</p>
       </form>
+
+
+
+
+
+
+
+
+
+
+      {/* pop-up message */}
+
+
+        <div className="overlaybg" id='overLay'>
+          <div className="message-box">
+            <h1>logo</h1>
+            <p>You have successfully created an account</p>
+            <button onClick={() => closePopup()} >Continue</button>
+          </div>
+        </div>
+      
     </div>
   );
 };
